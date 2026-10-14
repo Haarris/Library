@@ -1,0 +1,60 @@
+{
+  "$schema": "../../schema/bot.schema.json",
+  "slug": "cachecanary",
+  "name": "CacheCanary",
+  "description": "Checks a change for anything that would break Claude prompt caching on Bedrock",
+  "category": "Code review",
+  "about": "Point it at a branch or pull request in a project that calls Claude on Amazon Bedrock. It runs the open-source CacheCanary checks on any saved requests, reads the diff for changes that quietly stop prompt caching, and gives one verdict: breaks cache, at risk or safe, with the file and line behind it. It is read-only and never calls AWS.",
+  "features": [
+    "Run CacheCanary on saved Bedrock requests",
+    "Spot cache breakers in the code diff",
+    "One clear verdict with file and line evidence"
+  ],
+  "examplePrompt": "Check my current branch for anything that would break Bedrock prompt caching before I merge.",
+  "author": {
+    "github": "Haarris",
+    "name": "Haris Farooq"
+  },
+  "mascot": {
+    "body": "birdy",
+    "color": "brand-honey",
+    "activity": "reading"
+  },
+  "emoji": "🐤",
+  "agent": "claude-code",
+  "permissionMode": "ask-permissions",
+  "allowedTools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Bash"
+  ],
+  "disallowedTools": [
+    "Edit",
+    "Write",
+    "NotebookEdit",
+    "WebFetch",
+    "WebSearch",
+    "Read(**/.env)",
+    "Read(**/.env.*)",
+    "Bash(git push *)",
+    "Bash(git commit *)",
+    "Bash(git add *)",
+    "Bash(git checkout *)",
+    "Bash(git switch *)",
+    "Bash(git reset *)",
+    "Bash(git restore *)",
+    "Bash(git stash *)",
+    "Bash(git merge *)",
+    "Bash(git rebase *)",
+    "Bash(git pull *)",
+    "Bash(rm *)",
+    "Bash(mv *)",
+    "Bash(sudo *)",
+    "Bash(aws *)",
+    "Bash(cachecanary probe *)",
+    "Bash(gh pr comment *)",
+    "Bash(gh pr review *)",
+    "Bash(gh pr merge *)"
+  ]
+}
