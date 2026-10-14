@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/bot.schema.json",
+  "slug": "scout",
+  "name": "Scout",
+  "description": "Cited research that re-checks every quote and keeps a library of findings",
+  "category": "Developer workflow",
+  "about": "Ask Scout a question and it checks its own library before searching the web, X, Reddit, GitHub and YouTube. Every quote is re-opened and checked for wording, author and date before the answer ships. Claims are tagged confirmed, likely or speculative, and saved for next time.",
+  "features": [
+    "Reuse past findings before searching again",
+    "Re-verify every quote, author and date",
+    "Tag each claim confirmed, likely or speculative"
+  ],
+  "examplePrompt": "Deep research: how are developers reacting to Cursor Projects on X and Reddit, and what would change that picture?",
+  "author": {
+    "github": "crocsarecool",
+    "name": "Raunaq Vaisoha"
+  },
+  "mascot": {
+    "body": "bunny",
+    "color": "brand-leaf",
+    "activity": "reading"
+  },
+  "emoji": "🔭",
+  "agent": "claude-code",
+  "permissionMode": "ask-permissions"
+}
