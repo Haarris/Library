@@ -1,0 +1,61 @@
+{
+  "$schema": "../../schema/bot.schema.json",
+  "slug": "okf-keeper",
+  "name": "OKF Keeper",
+  "description": "Keeps an Open Knowledge Format bundle valid, and settles what the tools can't",
+  "category": "Repository care",
+  "about": "Point it at an OKF bundle, the markdown knowledge folder agents read. It runs vault2okf to validate the bundle and repair the routine problems, then works through what needs a person, like where a broken link should point or how to mend frontmatter that isn't valid YAML. It proposes each of those with its evidence and changes nothing without your yes.",
+  "features": [
+    "Validate and repair a bundle with vault2okf",
+    "Find where broken links should point",
+    "Changes nothing beyond the bundle without asking"
+  ],
+  "examplePrompt": "Check the knowledge folder in this repo, fix what's safe, and help me sort out the broken links.",
+  "author": {
+    "github": "abhishekacharya200",
+    "name": "Abhishek Acharya"
+  },
+  "mascot": {
+    "body": "flower",
+    "color": "brand-leaf",
+    "activity": "working"
+  },
+  "emoji": "📚",
+  "agent": "claude-code",
+  "permissionMode": "ask-permissions",
+  "allowedTools": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Edit",
+    "Bash"
+  ],
+  "disallowedTools": [
+    "Write",
+    "NotebookEdit",
+    "WebFetch",
+    "WebSearch",
+    "Read(**/.env)",
+    "Read(**/.env.*)",
+    "Bash(git push *)",
+    "Bash(git commit *)",
+    "Bash(git add *)",
+    "Bash(git checkout *)",
+    "Bash(git switch *)",
+    "Bash(git reset *)",
+    "Bash(git restore *)",
+    "Bash(git stash *)",
+    "Bash(git merge *)",
+    "Bash(git rebase *)",
+    "Bash(git pull *)",
+    "Bash(git clean *)",
+    "Bash(rm *)",
+    "Bash(mv *)",
+    "Bash(sudo *)",
+    "Bash(curl *)",
+    "Bash(wget *)",
+    "Bash(vault2okf convert *)",
+    "Bash(vault2okf init *)",
+    "Bash(gh *)"
+  ]
+}
